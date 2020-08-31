@@ -1,6 +1,7 @@
-version: '3'
+version: "3"
 services:
   db:
+    container_name: "pg-database"
     image: postgres:12
     env_file:
       - ./data/.env
@@ -9,6 +10,16 @@ services:
       - database-data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
+  server:
+    container_name: "node-backend"
+    build: ./server
+    depends_on:
+      - db
+    env_file:
+      - ./server/.env
+    command: npm start
+    ports:
+      - "5000:5000"
 
 volumes:
   database-data:
