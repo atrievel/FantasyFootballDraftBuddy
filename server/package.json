@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for FF Draft Buddy app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "author": "Alec",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg-promise": "^10.6.1"
+  }
+}
